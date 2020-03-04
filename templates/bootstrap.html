@@ -24,11 +24,16 @@
             </div>
             <div class="col-4">
                 <h2>Прогноз погоды</h2>
-                {% if weather%}
-                    Погода в {{ city_name }}: {{ weather.temp_C }}, ощущается как {{ weather.FeelsLikeC }}
+                {% if weather %}
+                    {{ city_name }}: {{ weather.temp_C }}, ощущается как {{ weather.FeelsLikeC }}
                 {% else %}
                     Сервис погоды временно недоступен
-                {% endif %}                    
+                {% endif %}  
+                {% if weather2 %}
+                    <p>{{ city_name2 }}: {{ weather2.temp_C }}, ощущается как {{ weather2.FeelsLikeC }}</p>
+                {% else %}
+                    Сервис погоды временно недоступен
+                {% endif %}                     
             </div>
         </div>
     </div>
