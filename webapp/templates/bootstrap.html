@@ -33,7 +33,12 @@
                     <p>{{ city_name2 }}: {{ weather2.temp_C }}, ощущается как {{ weather2.FeelsLikeC }}</p>
                 {% else %}
                     Сервис погоды временно недоступен
-                {% endif %}                     
+                {% endif %}
+                {% if weather3 %}
+                    <p>{{ city_name3 }}: {{ weather3.temp_C }}, ощущается как {{ weather3.FeelsLikeC }}</p>
+                {% else %}
+                    Сервис погоды временно недоступен
+                {% endif %}                                         
             </div>
         </div>
     </div>
