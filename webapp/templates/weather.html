@@ -18,12 +18,28 @@
                 <h2>Новости</h2>
                 {% for news in news_list %}
                 <h3><a href="{{ news.url }}">{{ news.title }}</a></h3>
-                <p>{{ news.published }}</p>
+                <p>{{ news.published.strftime('%d.%m.%Y %H.%M') }}</p>
                 <hr />
                 {% endfor %}
             </div>
             <div class="col-4">
-                <h1><a href="weather.html" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true">Главная ссылка</a></h1>
+                <h2>Прогноз погоды</h2>
+                {% if weather %}
+                    {{ city_name }}: {{ weather.temp_C }}, ощущается как {{ weather.FeelsLikeC }}
+                {% else %}
+                    Сервис погоды временно недоступен
+                {% endif %}  
+                {% if weather2 %}
+                    <p>{{ city_name2 }}: {{ weather2.temp_C }}, ощущается как {{ weather2.FeelsLikeC }}</p>
+                {% else %}
+                    Сервис погоды временно недоступен
+                {% endif %}
+                {% if weather3 %}
+                    <p>{{ city_name3 }}: {{ weather3.temp_C }}, ощущается как {{ weather3.FeelsLikeC }}</p>
+                {% else %}
+                    Сервис погоды временно недоступен
+                {% endif %}  
+                <button type="button" class="btn btn-primary"></button>Главный</button>                                       
             </div>
         </div>
     </div>

@@ -1,6 +1,7 @@
 import requests
 from flask import current_app
 
+
 def weather_by_city(city_name):
     weather_url = 'http://api.worldweatheronline.com/premium/v1/weather.ashx'
     params = {
