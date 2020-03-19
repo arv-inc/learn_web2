@@ -24,21 +24,18 @@
             </div>
             <div class="col-4">
                 <h2>Прогноз погоды</h2>
+                {% if weather_list %}
+                <h3>На {{ weather_list[0].observation_time }}</h3>
+                {% for weather in weather_list %}
                 {% if weather %}
-                    {{ city_name }}: {{ weather.temp_C }}, ощущается как {{ weather.FeelsLikeC }}
+                    <p>{{ weather.city}}: {{ weather.temp_C }}, ощущается как {{ weather.feels_like }}</br>
+                        ветер {{ (weather.windspeedKmph*1000/3600)|int}} м/сек
+                    </p>
                 {% else %}
                     Сервис погоды временно недоступен
                 {% endif %}  
-                {% if weather2 %}
-                    <p>{{ city_name2 }}: {{ weather2.temp_C }}, ощущается как {{ weather2.FeelsLikeC }}</p>
-                {% else %}
-                    Сервис погоды временно недоступен
+                {% endfor %}
                 {% endif %}
-                {% if weather3 %}
-                    <p>{{ city_name3 }}: {{ weather3.temp_C }}, ощущается как {{ weather3.FeelsLikeC }}</p>
-                {% else %}
-                    Сервис погоды временно недоступен
-                {% endif %}  
                 <button type="button" class="btn btn-primary"></button>Главный</button>                                       
             </div>
         </div>
