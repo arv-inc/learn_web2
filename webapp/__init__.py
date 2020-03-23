@@ -1,5 +1,5 @@
 from flask import Flask, render_template, flash, redirect, url_for
-from flask_login import LoginManager, current_user, login_user, logout_user
+from flask_login import LoginManager, current_user, login_required, login_user, logout_user
 
 from webapp.forms import LoginForm
 from webapp.model import db, News, Weather, User
@@ -53,5 +53,13 @@ def create_app():
         logout_user()
         flash('Вы успешно разлогинились')
         return redirect(url_for('index'))
+
+    @app.route('/admin')
+    @login_required
+    def admin():
+        if current_user.is_admin:
+            return 'Hello Admin'
+        else:
+            return 'Access denied'
 
     return app
