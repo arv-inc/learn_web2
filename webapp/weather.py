@@ -1,7 +1,8 @@
 from datetime import datetime
 
 import requests
-from webapp.model import db, Weather
+from webapp.db import db
+from webapp.news.models import Weather
 from webapp.config import WEATHER_API_KEY
 
 
