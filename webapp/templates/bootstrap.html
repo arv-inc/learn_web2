@@ -23,17 +23,7 @@
                 {% endfor %}
             </div>
             <div class="col-4">
-                <h2>Прогноз погоды</h2>
-                {% if weather %}
-                    {{ city_name }}: {{ weather.temp_C }}, ощущается как {{ weather.FeelsLikeC }}
-                {% else %}
-                    Сервис погоды временно недоступен
-                {% endif %}  
-                {% if weather2 %}
-                    <p>{{ city_name2 }}: {{ weather2.temp_C }}, ощущается как {{ weather2.FeelsLikeC }}</p>
-                {% else %}
-                    Сервис погоды временно недоступен
-                {% endif %}                     
+                <h1><a href="weather.html" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true">Главная ссылка</a></h1>
             </div>
         </div>
     </div>
